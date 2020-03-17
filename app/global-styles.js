@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
       background-color:#303a52;
       box-sizing: border-box;
       font-size: 1.6rem;
-      font-family: 'Lato';
+      font-family: 'Lato', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       color: var(--font-color);
