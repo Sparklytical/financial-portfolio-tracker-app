@@ -3,11 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   // variables
     :root {
-      --primary-color: #2a7f62;
-      --tertiary-color: #d9f2ea;
-      --font-color: #353d2f;
-      --info-color: #bbdefb;
-      --danger-color: #ef5350;
+      --primary-color: #0e153a;
+      --tertiary-color: #a1eafb;
+      --font-color: #e2f3f5;
+      --info-color: #086972;
+      --danger-color: #ff304f;
     }
 
     *,
@@ -23,11 +23,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+      background-color:#303a52;
       box-sizing: border-box;
       font-size: 1.6rem;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
+      font-family: 'Lato';
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       color: var(--font-color);
