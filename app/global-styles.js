@@ -74,6 +74,20 @@ const GlobalStyle = createGlobalStyle`
       }
     }
 
+    .StockButton {
+      background-color: #f5f5f5;
+      border: 1px solid #e8e8e8;
+      cursor: pointer;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.6rem;
+      box-shadow: 2px 2px .6rem rgba($color: #000000, $alpha: 0.3);
+
+      &--danger {
+        background-color: var(--danger-color);
+        color: #fff;
+      }
+    }
+
 `;
 
 export default GlobalStyle;

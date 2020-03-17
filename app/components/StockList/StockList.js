@@ -64,7 +64,7 @@ class StockList extends React.Component {
                 !stock.isTracking && (
                   <div className="list-item" key={stock.symbol}>
                     <button
-                      className="btn StockButton"
+                      className="StockButton"
                       type="button"
                       onClick={() => this.showModal(stock)}
                     >
