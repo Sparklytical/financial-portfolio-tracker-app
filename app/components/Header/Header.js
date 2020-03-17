@@ -1,30 +1,21 @@
 import React from 'react';
 import './Header.scss';
 
-// components
-
-// icons
-
-// Images
-
-import Banner from '../common/assets/images/Main.png';
-
-function Header() {
+export default function Header() {
+  const day = new Date().getDay();
   return (
-    <div className="Header">
-      <a href="https://github.com/EvilSpark/react-redux-boilerplate/">
-        <img src={Banner} alt="react-boilerplate - Logo" />
-      </a>
-
-      <ul>
-        <a href="/">Home</a>
-        <a href="/features">Features</a>
-        <a href="https://github.com/EvilSpark/react-redux-boilerplate">
-          Github
+    <>
+      <header className="app-header">
+        <a href="/" className="brand-link">
+          Financial Portfolio Tracker
         </a>
-      </ul>
-    </div>
+      </header>
+      {day === 0 || day === 6 ? (
+        <div style={{ textAlign: 'center' }}>
+          * Since it is a weekend all the stock closing prices are taken from
+          Friday.
+        </div>
+      ) : null}
+    </>
   );
 }
-
-export default Header;

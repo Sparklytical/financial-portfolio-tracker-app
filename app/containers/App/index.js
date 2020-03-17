@@ -13,12 +13,12 @@ import { Helmet } from 'react-helmet-async';
 
 import { hot } from 'react-hot-loader/root';
 import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
+// import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 // Header and Footer
 import Header from 'components/Header';
-import Footer from 'components/Footer';
+// import Footer from 'components/Footer';
 
 import GlobalStyle from '../../global-styles';
 
@@ -26,21 +26,19 @@ function App() {
   return (
     <div>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - Financial Portfolio Tracker"
+        defaultTitle="Financial Portfolio Tracker"
       >
         <meta
           name="description"
-          content="A React.js Boilerplate application  "
+          content="A Financial Portfolio Tracker application  "
         />
       </Helmet>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
       <GlobalStyle />
     </div>
   );

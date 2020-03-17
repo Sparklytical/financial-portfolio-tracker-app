@@ -1,0 +1,48 @@
+.MyStocks,
+.AddStocksTitle {
+  max-width: 118rem;
+  margin: 1.5rem auto;
+
+  h1 {
+    font-size: 2.7rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 2.4rem;
+  }
+}
+.MyStocksTable {
+  margin: 1.5rem 0;
+  width: 100%;
+  border: 1px solid #e8e8e8;
+}
+
+.table-header {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.table-header th {
+  padding: 1rem 0;
+  font-size: 1.55rem;
+  border: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.table-body td {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.85rem 0;
+  font-weight: 400;
+}
+
+.table-body-row:nth-of-type(even) {
+  background-color: var(--tertiary-color);
+}
+
+.table-body-row.centered {
+  text-align: center;
+}
