@@ -1,21 +1,25 @@
 import React from 'react';
-import './Header.scss';
+import { NavLink } from 'react-router-dom';
+import styles from './Header.module.css';
 
-export default function Header() {
-  const day = new Date().getDay();
-  return (
-    <>
-      <header className="app-header">
-        <a href="/" className="brand-link">
-          Financial Portfolio Tracker
-        </a>
-      </header>
-      {day === 0 || day === 6 ? (
-        <div style={{ textAlign: 'center' }}>
-          * Since it is a weekend all the stock closing prices are taken from
-          Friday.
-        </div>
-      ) : null}
-    </>
-  );
-}
+export const Header = () => (
+  <header className={styles.header}>
+    <nav className={styles.nav}>
+      <div className={styles.brand}>
+        <NavLink to="/">Pro Organiser</NavLink>
+      </div>
+      <ul className={styles.menu}>
+        <li>
+          <NavLink exact activeClassName={styles.activeLink} to="/">
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/createboard" activeClassName={styles.activeLink}>
+            Create a board
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  </header>
+);

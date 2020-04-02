@@ -1,151 +1,99 @@
-/* eslint-disable no-param-reassign */
-import axios from 'axios';
 import db from '../firebase/init';
 
-const apiEndpoint = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&apikey=${process.env.API_KEY}`;
-
-export const getStockLists = async () => {
+export const getBoards = async () => {
   try {
-    const querySnapshot = await db.collection('stocks').get();
-    const stocks = querySnapshot.docs.map(doc => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
-    return stocks;
+    const snapshot = await db
+      .collection('boards')
+      .orderBy('name', 'desc')
+      .get();
+    const boards = snapshot.docs.map(d => ({ ...d.data(), id: d.id }));
+    return boards;
   } catch (error) {
     return [];
   }
 };
 
-const formatTrackedStocks = async tracked => {
+// ADD board
+export const addBoard = async board => {
   try {
-    const allData = tracked.map(async data => {
-      const currentDayData = await getOneStockInfo(data);
-
-      if (currentDayData.message) {
-        throw new Error('server error');
-      }
-
-      data.stockData = currentDayData;
-      data.profit =
-        (currentDayData['4. close'] - data.buyPrice) * data.numberOfShares;
-
-      return data;
-    });
-    const val = await Promise.all(allData);
-    // console.log(val);
-    return val;
+    await db.collection('boards').add(board);
+    return true;
   } catch (error) {
     return error;
   }
 };
 
-export const getTrackedStocks = async () => {
+// Get board with ID
+export const getBoard = async id => {
   try {
-    const querySnapshot = await db.collection('trackedStocks').get();
-    const tracked = querySnapshot.docs.map(doc => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
-    // eslint-disable-next-line array-callback-return
-    const data = await formatTrackedStocks(tracked);
-    // console.log(data);
-    return data;
+    const board = await db
+      .collection('boards')
+      .doc(id)
+      .get();
+    return { ...board.data(), id: board.id };
   } catch (error) {
     // console.log(error);
     return error;
   }
 };
 
-export const getTrackedDBLen = async () => {
+export const deleteBoard = async id => {
   try {
-    const querySnapshot = await db.collection('trackedStocks').get();
-    const totalDocs = querySnapshot.docs.length;
-    return totalDocs;
-  } catch (error) {
-    return error;
-  }
-};
-
-export const addTrackedStock = async (data, id) => {
-  try {
-    // console.log(data);
-    const totalTrack = await getTrackedDBLen();
-    if (totalTrack >= 5) {
-      throw new Error(5);
-    }
-    const tracked = await db.collection('trackedStocks').add(data);
-    // console.log(tracked.get());
-    const stock = await db
-      .collection('stocks')
-      .doc(id)
-      .update({
-        isTracking: true,
-      });
-    if (stock && tracked) {
-      return tracked.id;
-    }
-  } catch (error) {
-    return error;
-  }
-};
-
-export const getOneStockInfo = async data => {
-  try {
-    const res = await axios.get(`${apiEndpoint}&symbol=${data.stockSymbol}`);
-    if (res.data.Note) {
-      throw new Error('server error');
-    }
-    const lastRefreshed = res.data['Meta Data']['3. Last Refreshed'].split(
-      ' ',
-    )[0];
-    const currentDayData = res.data['Time Series (Daily)'][lastRefreshed];
-    return currentDayData;
-  } catch (error) {
-    return error;
-  }
-};
-
-export const updateTracked = async (id, symbol) => {
-  try {
-    const listId = await getOneStock(symbol);
     await db
-      .collection('trackedStocks')
+      .collection('boards')
       .doc(id)
       .delete();
-    await db
-      .collection('stocks')
-      .doc(listId)
-      .update({ isTracking: false });
     return true;
   } catch (error) {
-    return false;
+    // console.log(error);
+    return error;
   }
 };
 
-export const getOneTracked = async symbol => {
+export const getColumns = async boardId => {
   try {
-    const ref = db.collection('tracked').where('stockSymbol', '==', symbol);
-    const snapShot = await ref.get();
-    let id;
-    snapShot.forEach(doc => {
-      id = doc.id;
-    });
-    return id;
+    const snapshot = await db
+      .collection('columns')
+      .where('boardId', '==', boardId)
+      .orderBy('created')
+      .get();
+    const boards = snapshot.docs.map(d => ({ ...d.data(), id: d.id }));
+    return boards;
+  } catch (error) {
+    return [];
+  }
+};
+
+export const addColumn = async column => {
+  try {
+    const d = await db.collection('columns').add(column);
+    return d.id;
   } catch (error) {
     return error;
   }
 };
 
-export const getOneStock = async symbol => {
+// Update Column
+export const updateColumn = async (id, column) => {
   try {
-    const ref = db.collection('stocks').where('symbol', '==', symbol);
-    const snapShot = await ref.get();
-    let id;
-    snapShot.forEach(doc => {
-      id = doc.id;
-    });
-    return id;
+    await db
+      .collection('columns')
+      .doc(id)
+      .update(column);
+    return true;
+  } catch (error) {
+    return error;
+  }
+};
+
+// Delete the column
+export const deleteColumn = async id => {
+  try {
+    await db
+      .collection('columns')
+      .doc(id)
+      .delete();
+    return true;
   } catch (error) {
     return error;
   }

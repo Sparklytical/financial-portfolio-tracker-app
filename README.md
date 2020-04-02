@@ -1,192 +1,122 @@
-﻿# **Project – Finance Portfolio Tracker**
+<p align=center>
+<img src="https://raw.githubusercontent.com/EvilSpark/react-redux-boilerplate/master/app/components/common/assets/images/Main.png" alt="react boilerplate banner" align="center" />
+</p>
+<br />
 
-## Overview
+<div align="center"><strong>Start your next react project in seconds</strong></div>
+<div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>
 
-Use the concepts of React you’ve learnt in the Sprint 4 to create a Finance Portfolio Tracker Application and deploy it to Firebase.
+<br />
 
+<div align="center">
+<div align="center">
+  <!-- Dependency Status -->
+ <img alt="David" src="https://img.shields.io/david/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=Dependabot">
+  <!-- devDependency Status -->
 
-## Web Page Mock Up
+ <img alt="David" src="https://img.shields.io/david/dev/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=Dependabot">
 
-#### Home Page
+  <!-- Build Status -->
 
-![Home Page](https://github.com/greyatom-school/the-minerva-project/raw/master/FEWD/sprint_4/5.%20Project/Screens/FP1.png)
-
-This is how your home page will look like.
-
-At any point it should always show the user's stocks('My Stocks')
-and display the list of stocks that can be added('Add stocks to my stocks')
-
-#### Add Stocks Page
-
-![Modal](https://github.com/greyatom-school/the-minerva-project/raw/master/FEWD/sprint_4/5.%20Project/Screens/FP2.PNG)
-
-On clicking the stock button in **Add stocks to my stocks** section, this modal will open up with the following details:
-
-- Company Name(Already Populated)
-- No. of Shares
-- Buy Price
-- Buy Date
-
-
-To complete the project successfully, ensure that you complete the following pre-requisites:
-
-***
-- External pre-requisite 1:
-
-You need to have a high level domain understanding of [what is financial portfolio](https://www.investopedia.com/terms/p/portfolio.asp) and [how a financial portfolio tracker helps](https://www.benzinga.com/money/best-portfolio-tracker/) 
-***
-- External pre-requisite 2:
+<img alt="Travis (.com)" src="https://img.shields.io/travis/com/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=travis">
   
-You also need to have an understanding of [Alphavantage](https://www.alphavantage.co/documentation/#daily) - a website that stores datasets and helps you fetch them using API calls. We will use API services to fetch data and then use it in our project.
+  <img alt="AppVeyor" src="https://img.shields.io/appveyor/ci/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=appveyor">
 
-We will be using the TIME_SERIES_DAILY stock prices to populate our web application. 
-a)	To use Alphavantage, go to the web page and create a free account to get the API key. *_You will need the API key for any API calls._*
+  <!-- Gitmoji -->
 
-b)	Next, they have listed down a few URLS in the Daily section which show how the data fetching is enabled. Click on the links to understand the structure data and how to utilise it.
+  <a href="https://github.com/frinyvonnick/gitmoji-changelog">
+    <img src="https://img.shields.io/badge/Changelog-gitmoji-brightgreen.svg?style=for-the-badge&logo=github" alt="Changelog" />
 
-c)	Using the API above, you will fetch data using Axios and feed it to the web page.
+  </a>
 
-e)	Store only values relevant to the design, in the state & add to the cards.
+  <!-- Maintenance -->
 
-f) When you check out Alphavantage, you will notice that only 5 API calls per minute are allowed. So, kindly ensure that you add a counter or a handler in your code which keeps a track of the API calls you will be making.
+<img alt="Code Climate maintainability" src="https://img.shields.io/codeclimate/maintainability/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=code-climate">
 
-g) Additionally, Alphavantage only shows data for the weekdays. For weekends, you should pick the data which is shown last. For example, if November 9/10 is Satuday and Sunday, the table showing Current Price will show data for November 8, Friday and a message would be shown above citing the same.
+  <!-- Codacy -->
 
-***
-- External pre-requisite 3:
+<img alt="Codacy grade" src="https://img.shields.io/codacy/grade/f748eb00985e46e08bbc77fa92c50313?style=for-the-badge&logo=codacy">
 
-Since you will be creating a web application using React, we recommend you to install all the dependencies before you begin coding on your local machine. Ensure that the package.json has all the correct dependencies installed. Once all the dependencies are installed, calculate the number of components to be used and the hierarchy to be involved in it. Try to use reusable components as much as possible. 
+  <!-- Codefactor -->
 
-Accordingly, create the folder structure corresponding to the components you listed and add placeholder JS files in it.
- ***
-**As boilerplate, we are only providing you this readme file.**
+<img alt="CodeFactor Grade" src="https://img.shields.io/codefactor/grade/github/evilspark/Infinity-react-boilerplate?style=for-the-badge&logo=codefactor">
 
-**The only requirement is ensure that irrespective of your method, you  set the default port value=3000(If you are using Create-React-App, that will be taken care of automatically, for other setups, make the necessary changes accordingly). Otherwise test cases will get stuck.**
+  <!-- Netlify -->
 
-***
+<img alt="Netlify" src="https://img.shields.io/netlify/069a4fac-25fc-4413-bc0a-631770514735?style=for-the-badge&logo=netlify">
+</a>
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=github">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=github">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=github">
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=github">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/EvilSpark/Infinity-react-boilerplate?style=for-the-badge&logo=github">
+</div>
+</div>
 
+<br />
 
-After successfully completing the above pre-reqs, complete the following user stories in order to recreate the page shown below.
+<div align="center">
+  <sub>Created by <a href="https://github.com/EvilSpark">EvilSpark</a> and forked from <a href="https://www.reactboilerplate.com/">ReactBoilerplate</a>.</sub>
+</div>
 
+## Features
 
 
 
-## User stories
+<dl>
+  <dt>Quick scaffolding</dt>
+  <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
 
+  <dt>Instant feedback</dt>
+  <dd>Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!</dd>
 
-### User Story #1
-User should be able to view all his owned stocks
+  <dt>Predictable state management</dt>
+  <dd>Unidirectional data flow allows for change logging and time travel debugging.</dd>
 
-#### Details
-Create an upper container(`div`) with the class name `"MyStocks"`. 
+  <dt>Next generation JavaScript</dt>
+  <dd>Use template strings, object destructuring, arrow functions, JSX syntax etc.</dd>
 
-It should show the owned stocks in a table format. Keep the table class name as `"MyStocksTable"`.
+  <dt>Next generation CSS</dt>
+  <dd>Write composable CSS that's co-located with your components for complete modularity. Unique generated class names keep the specificity low while eliminating style clashes. Ship only the styles that are on the page for the best performance.</dd>
 
-The owned stocks table should have the following columns(`th` elements):
-- `"Stock symbol"`
-- `"Stock name"`	
-- `"No.of shares"`	
-- `"Buy price"`	
-- `"Current price"`	(Value to be fetched using alphavantage API)
-- `"Profit/Loss"` (Difference between Buy Price and Current Price)
+  <dt>Industry-standard routing</dt>
+  <dd>It's natural to want to add pages (e.g. `/about`) to your application, and routing makes this possible.</dd>
 
+  <dt>Offline-first</dt>
+  <dd>The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</dd>
+<dt>Additional Features</dt>
+<dd>Improved Generator, Cache for faster startup</dd>
+  <dt>Static code analysis</dt>
+  <dd>Focus on writing new features without worrying about formatting or code quality. With the right editor setup, your code will automatically be formatted and linted as you work.</dd>
 
-It should look similar to the following:
-![](https://github.com/greyatom-school/the-minerva-project/raw/master/FEWD/sprint_4/5.%20Project/Screens/US11.PNG)
+  <dt>SEO</dt>
+  <dd>We support SEO (document head tags management) for search engines that support indexing of JavaScript content. (eg. Google)</dd>
+</dl>
 
+But wait... there's more!
 
-**Note #1** In the beginning, since we have not tracked any stocks, use conditional rendering to show that no stocks have been selected.
+- _Native web app:_ Your app's new home? The home screen of your users' phones.
+- _The fastest fonts:_ Say goodbye to vacant text.
+- _Stay fast_: Profile your app's performance from the comfort of your command
+  line!
+- _Catch problems:_ AppVeyor and TravisCI setups included by default, so your
+  tests get run automatically on Windows and Unix.
 
-**Note #2** Since there is a limit of five api calls per minute, ensure that you have a error handler that displays "There seems to be a issue with server"
+<sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver</i></sub>
 
-### User Story #2
+## Quick start
 
-User should be able to add stocks from a set of provided stocks.
+1.  Make sure that you have Node.js v8.15.1 and npm v5 or above installed.
+2.  Clone this repo using `git clone --depth=1 https://github.com/EvilSpark/react-redux-boilerplate.git <YOUR_PROJECT_NAME>`
+3.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.<br />
+4.  Run `npm run setup` in order to install dependencies and clean the git repo.<br />
+    _At this point you can run `npm start` to see the example app at `http://localhost:3000`._
+5.  Although I prefer using <a href="https://pnpm.js.org/">PNPM</a> instead of NPM.
 
-#### Details
+Now you're ready to rumble!
 
-Create a database on Firebase and add the following stock tickers and their company names in an object in the database: MSFT, DIS, BA, HD, NKE, MCD, INTC, GS, JPM, AXP, IBM. <br />
-(e.g. ```[{symbol: 'MSFT', name: 'Microsoft Corporation'}, {symbol: 'GS', name: 'Goldman Sachs Group Inc.'}]```) <br />
-These stock tickers will be used to populate the buttons in the bottom div. 
+> Please note that this boilerplate is **production-ready and not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead. If you want a solid, battle-tested base to build your next product upon and have some experience with react, this is the perfect start for you.
 
-*Note:Feel free to add more(MSFT and GS are compulsory)*
+## License
 
-Create the lower container(`div`) with the class name `"AddStocksTitle"`. That should have a list view of all the stocks where list elements are buttons. The buttons should have a class name `"StockButton"` 
-
-It should look similar to the following:
-
-![](https://github.com/greyatom-school/the-minerva-project/raw/master/FEWD/sprint_4/5.%20Project/Screens/US21.PNG)
-
-
-
-When the user clicks on the button, use the concept of event handling to get the value of the button clicked and using Axios calls, connect with the Alphavantage database and fetch the data related to that particular stock. 
-
-Additionally, a modal should pop up which asks the user to enter the number of shares. The modal div should have class name `"AddStockForm"` 
-
-The modal should be pre-filled with the stock name.
-
-Along with that it  should provide empty containers for the inputs:
-
-- No. of Shares(`<input>` element with id `"noShares"`)
-- buy price(`<input>` element with id `"buyPrice"`)
-- date of buying the stocks input(`<input>` element with id `"buyDate"`) 
-
-Inside the modal, there should also be a button (`'<button>'` element with class name `"AddButton"`) with the text `"Add"`.
-
-It should look similar to the following:
-![](https://github.com/greyatom-school/the-minerva-project/raw/master/FEWD/sprint_4/5.%20Project/Screens/US22.PNG)
-
-Following checks should also be there:
-
-- Date input should have a date formatter.
-- Clicking on the button in 'Add Stock' modal should first check if all the inputs are completed. If not, it should throw up an error.
-
-
-On clicking `"Add"`, this entry should be made in the database on Firebase. <br />
-
-If the user fills the modal and adds stock from tracking, it should update both the sections. It should be added to the My Stocks container with the current price and calculation and it should be removed from Add Stocks.
- 
-
-### User Story #3
-
-User should see his profit/loss associated with each stock he owns
-
-#### Details
-
-Along with the stock details, you need to show the latest current price and calculate the profit/loss as (current price – buy price) * no. of shares. 
-
-
-
-Since Alphavantage only allows 5 API calls per minute, add a condition that only 5 stocks can be selected for tracking. If user has selected 5 stocks to track, you should conditionally render a message telling the user that he/she has selected 5 stocks and the buttons with the stocks names should not be shown.
-
-
-
-### User Story #4
-User should be able to remove stocks
-
-#### Details
-
-In the upper container add one more column that stops tracking which has buttons as elements.
-
-The stop-tracking button(s) should have class name `"StopTrackingBtn"` 
-If the user clicks on the button, the associated stock should be removed from the `My Stocks table`(upper container) and added to `Add Stocks`(lower container).
-
-
-It will look similar to the following (Amazon Stocks is the stocks that is being removed)
-
-|Before|After clicking `Stop Tracking`|
-|---|---|
-|![](https://github.com/greyatom-school/the-minerva-project/raw/master/FEWD/sprint_4/5.%20Project/Screens//US41.PNG)|![](https://github.com/greyatom-school/the-minerva-project/raw/master/FEWD/sprint_4/5.%20Project/Screens//US42.PNG)|
-
----
-
-
-
-The above functionalities are the minimum expected of you. You are free to add as much personalization as you want in terms of style.
-
-
----
-
-
-
-
+This project is licensed under the MIT license, Copyright (c) 2019 EvilSpark. For more information see `LICENSE.md`.
